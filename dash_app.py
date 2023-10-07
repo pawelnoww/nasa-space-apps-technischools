@@ -10,11 +10,7 @@ app = dash.Dash(__name__, external_stylesheets=['/static/dash-styles.css', dbc.t
 
 # Read the data from the CSV file
 df = pd.read_csv('Meteorite_Landings.csv')
-print(df['mass (g)'].describe())
 df = df.loc[df['year'] < 2023]
-
-# fig = px.histogram(df, x='mass (g)', nbins=30)
-# fig.update_xaxes(type='log')  # Set the x-axis scale to logarithmic
 
 # Define the layout of the app
 app.layout = html.Div([
@@ -45,9 +41,6 @@ app.layout = html.Div([
         ),
         dcc.Graph(id='histogram-chart')
     ]),
-    # html.Div([
-    #     dcc.Graph(figure=px.bar(df.groupby(['year'])['year'].count()))
-    # ]),
 
     # Bar plots
     html.Div([
@@ -56,7 +49,7 @@ app.layout = html.Div([
             id='barplot-dropdown',
             options=[{'label': col, 'value': col} for col in
                      ['nametype', 'recclass', 'fall', 'year', 'reclat', 'reclong']],
-            value='year',  # Default column selection
+            value='recclass',  # Default column selection
             multi=False,  # Allow single column selection
             style={'width': '10vw'}
         ),
@@ -101,6 +94,18 @@ def update_histogram_chart(selected_column):
         # For other columns, use default binning
         fig = px.histogram(df, x=selected_column, nbins=15)
 
+    return fig
+
+# Callback to update the bar chart based on the selected column
+@app.callback(
+    Output('bar-chart', 'figure'),
+    Input('barplot-dropdown', 'value')
+)
+def update_bar_chart(selected_column):
+    # Group the data by the selected column and count the number of occurrences
+    data = df.groupby([selected_column])[selected_column].count().reset_index(name='count')
+    # Create a bar chart
+    fig = px.bar(data, x=selected_column, y='count')
     return fig
 
 
