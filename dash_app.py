@@ -5,7 +5,7 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 
 # Initialize the Dash app
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, external_stylesheets=['/static/dash-styles.css'])
 
 # Read the data from the CSV file
 df = pd.read_csv('Meteorite_Landings.csv')
