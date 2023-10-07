@@ -39,7 +39,7 @@ img {
 
 button {
   background-color: rgba(255, 255, 255, 0.3); /* White with 30% transparency */
-  border: solid white 3px;
+  border: solid black 3px;
   text-align: center;
   padding: 22px 170px;
   color: white;
@@ -47,9 +47,18 @@ button {
   font-weight: 600;
   font-size: 2.1rem;
   text-wrap: nowrap;
+  transition-duration: 0.4s;
+}
+button:hover {
+  background-color: rgba(179, 66, 245, 0.3); /* Green */
+  color: white;
+}
+a:visited{
+  color: white;
 }
 
-a:visited{
+a{
+  text-decoration: none;
   color: white;
 }
 
