@@ -1,5 +1,14 @@
-body{
-    background-color: blue;
-    /* To jest glupie i to zmiencie xD Linijka dla testu czy dziala
-     sprobujcie zrobic jakos ladniej te tabelki i wykresy, moze jakies tlo dodajcie */
-}
+body, html {
+    height: 100vh;
+    background: url("images/background.png") no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+
+  table {
+    color: black;
+  }
