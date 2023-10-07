@@ -87,7 +87,6 @@ def update_histogram_chart(selected_column):
 
         # Create a histogram trace
         fig = go.Figure(go.Bar(x=bins, y=hist, width=[bins[i + 1] / 2 - bins[i] / 2 for i in range(len(bins) - 1)]))
-        # fig = go.Figure(go.Bar(x=bins, y=hist, width=[bins[i + 1] - bins[i] for i in range(len(bins) - 1)]))
 
         # Update the x-axis to use a logarithmic scale
         fig.update_xaxes(type='log')
@@ -97,6 +96,7 @@ def update_histogram_chart(selected_column):
             xaxis_title=selected_column,
             yaxis_title='Frequency',
         )
+    # TODO sprobowac zrobic tez taka log scale dla 'year', ale odwrocona (wiekszosc danych jest blisko 2000r)
     else:
         # For other columns, use default binning
         fig = px.histogram(df, x=selected_column, nbins=15)
