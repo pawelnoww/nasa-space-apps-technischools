@@ -14,7 +14,7 @@ def hello_world():
 def features():
     urls = [
         {'name': 'Plots', 'address': 'http://127.0.0.1:8050/'},
-        {'name': 'Meteorite map', 'address': 'http://127.0.0.1:8050/'} #TODO dodac apke z mapami -> url zamienic
+        {'name': 'Meteorite map', 'address': 'https://j3rzy.dev/nasa/'}
     ]
     return render_template('features_page.html', urls=urls)
 
