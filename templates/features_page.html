@@ -6,10 +6,13 @@
 </head>
 <body>
     <div class="transparent-black">
+        <table>
         {% for url in urls %}
-        <button><a href={{url['address']}}>{{url['name']}}</a></button>
-{#            TODO: zrobic zeby buttony byly jeden pod drugim g#}
+            <tr>
+                <td><button><a href={{url['address']}}>{{url['name']}}</a></button></td>
+            </tr>
         {% endfor %}
+        </table>
     </div>
 </body>
 </html>

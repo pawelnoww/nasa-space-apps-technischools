@@ -13,8 +13,8 @@ def hello_world():
 @app.get('/features')
 def features():
     urls = [
-        {'name': 'Plots', 'address': 'http://127.0.0.1:8050/'},
-        {'name': 'Meteorite map', 'address': 'https://j3rzy.dev/nasa/'}
+        {'name': 'PLOTS', 'address': 'http://127.0.0.1:8050/'},
+        {'name': 'METEORITE APP', 'address': 'https://j3rzy.dev/nasa/'}
     ]
     return render_template('features_page.html', urls=urls)
 
