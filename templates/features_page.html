@@ -9,7 +9,7 @@
         <table>
         {% for url in urls %}
             <tr>
-                <td><button><a href={{url['address']}}>{{url['name']}}</a></button></td>
+                <td><a href={{url['address']}}><button>{{url['name']}}</button></a></td>
             </tr>
         {% endfor %}
         </table>
