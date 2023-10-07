@@ -1,14 +1,11 @@
-body, html {
-    height: 100vh;
-    background: url("images/background.png") no-repeat center center fixed;
-    background-size: cover;
-    background-position: center;
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    color: white;
-  }
+.content{
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
 
-  table {
-    color: black;
-  }
+
+.header{
+  margin: 0 auto;
+  text-align: center;
+}

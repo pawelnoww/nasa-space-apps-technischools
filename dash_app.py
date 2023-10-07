@@ -2,10 +2,11 @@ import dash
 from dash import dcc, html, dash_table
 import pandas as pd
 from dash.dependencies import Input, Output
+import dash_bootstrap_components as dbc
 import plotly.express as px
 
 # Initialize the Dash app
-app = dash.Dash(__name__, external_stylesheets=['/static/dash-styles.css'])
+app = dash.Dash(__name__, external_stylesheets=['/static/dash-styles.css', dbc.themes.LUX])
 
 # Read the data from the CSV file
 df = pd.read_csv('Meteorite_Landings.csv')
@@ -16,11 +17,9 @@ df = df.loc[df['year'] < 2023]
 
 # Define the layout of the app
 app.layout = html.Div([
-    html.H1('Meteorite Landings'),
-
     # Create a Dash DataTable to display the data
     html.Div([
-        html.H2('Meteorite data'),
+        html.H2('Meteorite data', className='header'),
         dash_table.DataTable(
             id='table',
             columns=[
@@ -35,12 +34,13 @@ app.layout = html.Div([
 
     # Histograms
     html.Div([
-        html.H2('Histogram'),
+        html.H2('Histogram', className='header'),
         dcc.Dropdown(
             id='histogram-dropdown',
             options=[{'label': col, 'value': col} for col in ['mass (g)', 'year']],
             value='mass (g)',
-            multi=False
+            multi=False,
+            style={'width': '10vw'}
         ),
         dcc.Graph(id='histogram-chart')
     ]),
@@ -51,17 +51,19 @@ app.layout = html.Div([
 
     # Bar plots
     html.Div([
-        html.H2('Barplot'),
+        html.H2('Barplot', className='header'),
         dcc.Dropdown(
             id='barplot-dropdown',
             options=[{'label': col, 'value': col} for col in ['nametype', 'recclass', 'fall', 'year', 'reclat', 'reclong']],
             value='year',  # Default column selection
-            multi=False  # Allow single column selection
+            multi=False,  # Allow single column selection
+            style={'width': '10vw'}
         ),
         # dcc.Graph(figure=px.histogram(df, x='mass (g)', nbins=20)),
         dcc.Graph(id='bar-chart')
     ])
-])
+],
+className="content")
 
 
 # Callback to update the bar chart based on the selected column
