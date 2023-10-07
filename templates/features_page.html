@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NASA Meteorite App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div class="transparent-black">
+        {% for url in urls %}
+        <button><a href={{url['address']}}>{{url['name']}}</a></button>
+        {% endfor %}
+    </div>
+</body>
+</html>

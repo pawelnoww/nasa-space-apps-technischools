@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NASA Meteorite App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+  <body>
+    <div class="transparent-black">
+      <div class="main">
+        <div class="images">
+          <img src="{{ url_for('static', filename='images/logoWhite.svg') }}" alt="techni logo" />
+          <h1>X</h1>
+          <img
+            src="https://static1.squarespace.com/static/56beda9601dbaed289db4f1d/t/58ccfff7725e25717a2d6b39/1489829885895/new-SpaceApps_logo.png?format=1500w"
+            alt="nasa logo"
+          />
+        </div>
+
+        <button><a href="{{url_for('features')}}">LOAD MORE...</a></button>
+      </div>
+    </div>
+  </body>
+</html>
