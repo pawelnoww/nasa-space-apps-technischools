@@ -1,0 +1,84 @@
+@import url("https://fonts.cdnfonts.com/css/cascadia-code");
+body {
+	padding: 0;
+	margin: 0;
+}
+html,
+body,
+#map {
+	scrollbar-width: none;
+	font-family: "Cascadia Code", sans-serif;
+	height: 100%;
+	width: 100%;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+#search {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	padding: 10px;
+	z-index: 400;
+	width: 250px;
+    height: 16px;
+}
+
+#filter {
+	position: absolute;
+	top: 60px; /* 20 from top + 16 (search box) + 4 (space between) */
+	right: 20px;
+	padding: 10px;
+	z-index: 400;
+	width: 250px;
+    height: 16px;
+}
+
+.show {
+    opacity: 1;
+}
+
+.search-results {
+    width: 250px;
+    font-family: "Cascadia Code", sans-serif;
+    position: absolute;
+    top: 58px;
+    right: 20px;
+    background-color: lightblue;
+    border: 2px solid white;
+    border-radius: 3px;
+    max-height: 50%; /* Adjust the maximum height as needed */
+    overflow-y: auto;
+    z-index: 500;
+    display: none; /* Initially hidden */
+    transition: max-height 0.3s ease; /* Add a smooth transition effect */
+    padding: 10px; /* Add some padding for spacing */
+    transition: opacity 0.6s linear;
+}
+
+.search-results.show {
+    display: block; /* Show the menu */
+}
+
+.result-item {
+    border-bottom: 1px solid white; /* Add a border to the bottom of each list item */
+    padding: 10px; /* Add some padding for spacing */
+    cursor: pointer;
+}
+
+/* Style the last list item to remove the border */
+.result-item:last-child {
+    border-bottom: none;
+}
+
+/* Hide the scrollbar in webkit-based browsers */
+.search-results::-webkit-scrollbar {
+    width: 0.5em; /* Set a width for the scrollbar */
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Make the scrollbar thumb transparent */
+}
+
+.search-results::-webkit-scrollbar-track {
+    background: transparent; /* Make the scrollbar track transparent */
+}
