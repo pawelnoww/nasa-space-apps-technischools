@@ -1,3 +1,13 @@
+body {
+  background-color: #111;
+  color: rgb(135, 188, 242);
+}
+
+tbody {
+  background-color: #111;
+  color: rgb(135, 188, 242);
+}
+
 .content{
   width: 80vw;
   margin: 0 auto;

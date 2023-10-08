@@ -38,15 +38,13 @@ img {
 }
 
 button {
-<<<<<<< HEAD
   background-color: rgba(255, 255, 255, 0.3); 
   border: solid white 3px;
-=======
-  background-color: rgba(255, 255, 255, 0.3); /* White with 30% transparency */
-  border: solid black 3px;
->>>>>>> 23ffdedee160618eb88e1755d7f79ceb857b2bfb
   text-align: center;
   padding: 22px 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   width: 60vh;
   font-weight: 600;
@@ -55,7 +53,7 @@ button {
   transition-duration: 0.4s;
 }
 button:hover {
-  background-color: rgba(179, 66, 245, 0.3); /* Green */
+  background-color: rgba(179, 66, 245, 0.3); 
   color: white;
 }
 a:visited{
